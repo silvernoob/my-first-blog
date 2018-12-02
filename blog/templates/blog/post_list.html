@@ -1,9 +1,46 @@
+{% load static %}
 <html>
+
     <head>
-        <title>"BHAI"</title>
+        <title>DNA</title>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
     </head>
+
+
+    <div class="page header">
+        <h1><a href="="/"">Prajeet Bhatt's Blog</h1>
+    </div>
+
+    <div class="post">
+    <p>published: {{ post.published_date }}</p>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+    </div>
     <body>
-        <h1>"WELCOME TO THE WORLD OF DEOXYRIBONUCLEIC ACID"</h1>
-        <p>"Deoxyribonucleic acid is present in the nucleus of a cell"</p>
+
+        <h1>WELCOME TO THE WORLD OF DeoxyriboNucleic Acid</h1>
+        <br />
+    </div>
+
+    <div class="content container">
+<div class="row">
+    <div class="col-md-8">
+        {% for post in posts %}
+            <div class="post">
+                <div class="date">
+                    <p>published: {{ post.published_date }}</p>
+                </div>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
     </body>
 </html>
